@@ -13,3 +13,38 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.loader {
+  height: 4rem;
+}
+
+.circle {
+  background-color: #262e39;
+  display: inline-block;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  margin: .2rem;
+  transform: translate3d(0);
+  animation: bounce .6s infinite alternate;
+}
+
+.circle:nth-child(2) {
+  background-color: #F9423A;
+  animation-delay: .75s;
+  animation-delay: .2s;
+}
+
+
+.circle:nth-child(3) {
+  animation-delay: .75s;
+  animation-delay: .4s;
+}
+
+@keyframes bounce {
+  to {
+    width: 0;
+    height: 0;
+    transform: translate3d(0, 1rem, 0);
+  }
+}
