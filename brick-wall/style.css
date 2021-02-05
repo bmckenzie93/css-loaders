@@ -7,6 +7,7 @@
 }
 
 body {
+  font-family: 'Monoton', cursive;
   background-image: radial-gradient(#ccc 0%, #f4f4f4 100%);
   height: 100vh;
   width: 100vw;
@@ -23,24 +24,49 @@ body {
   transition: width .3s, height .3s; 
 }
 
+/* ALL BRICKS */
 .top-row > div,
 .mid-row > div,
 .bot-row > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
-  transform: translateY(-200vh);
-  border: 3px solid orangered;
-  background-color: rgb(255, 201, 148);
-  box-shadow: 1px 1px 0px orangered,
-              2px 2px 0px orangered,
-              3px 3px 0px orangered,
-              4px 4px 0px orangered,
-              5px 5px 0px orangered,
-              6px 6px 0px orangered,
-              7px 7px 0px orangered,
-              8px 8px 0px orangered,
-              9px 9px 0px orangered,
-              10px 10px 0px orangered;
+  border: 3px solid rgb(80, 31, 13);
+  box-shadow: 1px 1px 0px rgb(80, 31, 13),
+              2px 2px 0px rgb(80, 31, 13),
+              3px 3px 0px rgb(80, 31, 13),
+              4px 4px 0px rgb(80, 31, 13),
+              5px 5px 0px rgb(80, 31, 13),
+              6px 6px 0px rgb(80, 31, 13),
+              7px 7px 0px rgb(80, 31, 13),
+              8px 8px 0px rgb(80, 31, 13),
+              9px 9px 0px rgb(80, 31, 13),
+              10px 10px 0px rgb(80, 31, 13);
 }
+  .top-row > div:nth-child(even),
+  .mid-row > div:nth-child(even),
+  .bot-row > div:nth-child(even) {
+    transform: translateY(-200vh) rotate(180deg);
+    background-image: radial-gradient(farthest-corner at 40px 40px,
+    rgb(214, 19, 19) 0%, orangered 100%);
+  }
+  .top-row > div:nth-child(odd),
+  .mid-row > div:nth-child(odd),
+  .bot-row > div:nth-child(odd) {
+    transform: translateY(-200vh) rotate(-180deg);
+    background-image: radial-gradient(farthest-corner at 90px 90px,
+    rgb(153, 15, 15) 0%, orangered 100%);
+  }
+
+/*  */
+.top-row > div > p,
+.mid-row > div > p,
+.bot-row > div > p {
+  font-size: 4rem;
+  color: rgb(67, 13, 13);
+}
+
 
 /* TOP ROW */
 .top-row {
@@ -86,6 +112,7 @@ body {
     animation: fall 3s linear 1.2s forwards;
   }
 
+
 /* BOTTOM ROW */
 .bot-row {
   height: 33.333%;
@@ -105,6 +132,8 @@ body {
     animation: fall 3s linear 0s forwards;
   }
 
+
+/* SMALL SCREENS */
 @media (max-width: 1000px) {
   .wall-container {
     height: 15rem;
@@ -112,6 +141,8 @@ body {
   }
 }
 
+
+/* ANIMATIONS */
 @keyframes fall {
   to {
     transform: translateY(0);
