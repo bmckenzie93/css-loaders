@@ -24,6 +24,13 @@ body {
   transition: width .3s, height .3s; 
 }
 
+/* ALL ROWS */
+.top-row,
+.mid-row,
+.bot-row {
+  perspective: 1000px;
+}
+
 /* ALL BRICKS */
 .top-row > div,
 .mid-row > div,
@@ -47,14 +54,14 @@ body {
   .top-row > div:nth-child(even),
   .mid-row > div:nth-child(even),
   .bot-row > div:nth-child(even) {
-    transform: translateY(-200vh) rotate(180deg);
+    transform: translate3d(0, -200vh, 0) rotate(180deg);
     background-image: radial-gradient(farthest-corner at 40px 40px,
     rgb(214, 19, 19) 0%, orangered 100%);
   }
   .top-row > div:nth-child(odd),
   .mid-row > div:nth-child(odd),
   .bot-row > div:nth-child(odd) {
-    transform: translateY(-200vh) rotate(-180deg);
+    transform: translate3d(0, -200vh, 0) rotate(-180deg);
     background-image: radial-gradient(farthest-corner at 90px 90px,
     rgb(153, 15, 15) 0%, orangered 100%);
   }
@@ -76,16 +83,16 @@ body {
 }
   .top-row .brick-1 {
     width: 33.333%;
-    animation: fall 3s linear 2.7s forwards;
+    animation: fall-1 6s linear 2.7s infinite;
 
   }
   .top-row .brick-2 {
     width: 33.333%;
-    animation: fall 3s linear 2.5s forwards;
+    animation: fall-2 6s linear 2.5s infinite;
   }
   .top-row .brick-3 {
     width: 33.333%;
-    animation: fall 3s linear 2.2s forwards;
+    animation: fall-1 6s linear 2.2s infinite;
   }
 
 
@@ -97,19 +104,19 @@ body {
 }
   .mid-row .brick-1 {
     width: 16.6665%;
-    animation: fall 3s linear 2s forwards;
+    animation: fall-2 6s linear 2s infinite;
   }
   .mid-row .brick-2 {
     width: 33.333%;
-    animation: fall 3s linear 1.7s forwards;
+    animation: fall-1 6s linear 1.7s infinite;
   }
   .mid-row .brick-3 {
     width: 33.333%;
-    animation: fall 3s linear 1.5s forwards;
+    animation: fall-1 6s linear 1.5s infinite;
   }
   .mid-row .brick-4 {
     width: 16.6665%;
-    animation: fall 3s linear 1.2s forwards;
+    animation: fall-2 6s linear 1.2s infinite;
   }
 
 
@@ -121,15 +128,16 @@ body {
 }
   .bot-row .brick-1 {
     width: 33.333%;
-    animation: fall 3s linear 1s forwards;
+    animation: fall-1 6s linear 1s infinite;
   }
   .bot-row .brick-2 {
     width: 33.333%;
-    animation: fall 3s linear .5s forwards;
+    animation: fall-2 6s linear .5s infinite;
   }
   .bot-row .brick-3 {
     width: 33.333%;
-    animation: fall 3s linear 0s forwards;
+    animation: 
+      fall-1 6s linear 0s infinite;
   }
 
 
@@ -143,8 +151,31 @@ body {
 
 
 /* ANIMATIONS */
-@keyframes fall {
-  to {
-    transform: translateY(0);
+@keyframes fall-1 {
+  25% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, 0, 0);
+  }
+  80% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(10rem, -20rem, 100rem);
+  }
+}
+@keyframes fall-2 {
+  25% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, 0, 0);
+  }
+  80% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-10rem, 20rem, 100rem);
   }
 }
