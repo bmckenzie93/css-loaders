@@ -30,6 +30,7 @@ body {
   perspective: 1000px;
 }
 
+/* ALL BLOCKS */
 .unit {
   opacity: 1;
   border: 1px solid #f4f4f4;
@@ -462,7 +463,7 @@ body {
 }
 
 
-/* FIRST 4 LARGE BG BLOCKS */
+/* 4 LARGE BG BLOCKS */
 .unit-c-17 {
   background-color: #333;
   grid-column: 1/7;
